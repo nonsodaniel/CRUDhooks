@@ -1,8 +1,9 @@
 import React from 'react';
 
 const UserTable = (props) => {
-    console.log("My props", props)
+
     let _props = props.users
+    console.log("My props", props)
     return (
         <table>
             <thead>
@@ -23,7 +24,7 @@ const UserTable = (props) => {
                                 <td>{user.username}</td>
                                 <td>
                                     <button className="button muted-button">Edit</button>
-                                    <button className="button muted-button">Delete</button>
+                                    <button className="button muted-button" onClick={() => props.deleteUser(user.id)} >Delete</button>
                                 </td>
                             </tr>
                         ))
@@ -34,15 +35,6 @@ const UserTable = (props) => {
                             </tr>
                         )
                 }
-
-                <tr>
-                    <td>Name data</td>
-                    <td>Username data</td>
-                    <td>
-                        <button className="button muted-button">Edit</button>
-                        <button className="button muted-button">Delete</button>
-                    </td>
-                </tr>
             </tbody>
         </table>
     )
